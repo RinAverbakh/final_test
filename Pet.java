@@ -59,4 +59,13 @@ public class Pet extends Animal{
     public void addSkill(String skill){
         this.skills.add(skill);
     }
+
+    @Override
+    public String toString() {
+        if (petTupe != null){
+           return  "Вид: " + petTupe + " ," + super.toString() + ", Команды: " + skills; 
+        } else {
+            return  "Вид: " + customPetTupe + " ," + super.toString() + ", Команды: " + skills;
+        }
+    }
 }

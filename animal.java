@@ -16,4 +16,9 @@ public abstract class Animal {
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
+
+    @Override
+    public String toString() {
+        return "Имя: " + name + ", Дата рождения: " + dateOfBirth;
+    }
 }

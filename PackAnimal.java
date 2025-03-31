@@ -91,4 +91,29 @@ public class PackAnimal extends Animal{
         }
         
     }
+
+    @Override
+    public String toString() {
+        String result = "";
+
+        if (packAnimalTupe != null){
+            result += "Вид: " + packAnimalTupe + " ," + super.toString();
+        } else {
+            result += "Вид: " + customPackAnimalTupe + " ," + super.toString();
+        }
+
+        if (isRidingAnimal){
+            result += ", ездовое животное";
+        } else {
+            result += ", неездовое животное";
+        }
+
+        if (islivestock){
+            result += ", даёт продовольствие.";
+        } else {
+            result += ", не даёт продовольствие.";
+        }
+
+        return result;
+    }
 }
