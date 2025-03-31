@@ -1,3 +1,4 @@
+package animalRegistry;
 import java.util.Date;
 
 enum PackAnimalTupe{
@@ -24,7 +25,7 @@ public class PackAnimal extends Animal{
     private String customPackAnimalTupe;
 
     public PackAnimal(String name, Date dateOfBirth, PackAnimalTupe packAnimalTupe, boolean isRidingAnimal, boolean islivestock){
-        super();
+        super(name, dateOfBirth);
         this.packAnimalTupe = packAnimalTupe;
         this.customPackAnimalTupe = null;
         this.isRidingAnimal = isRidingAnimal;
@@ -32,7 +33,7 @@ public class PackAnimal extends Animal{
     }
 
     public PackAnimal(String name, Date dateOfBirth, PackAnimalTupe packAnimalTupe, boolean isRidingAnimal){
-        super();
+        super(name, dateOfBirth);
         this.packAnimalTupe = packAnimalTupe;
         this.customPackAnimalTupe = null;
         this.isRidingAnimal = isRidingAnimal;
@@ -40,7 +41,7 @@ public class PackAnimal extends Animal{
     }
 
     public PackAnimal(String name, Date dateOfBirth, PackAnimalTupe packAnimalTupe){
-        super();
+        super(name, dateOfBirth);
         this.packAnimalTupe = packAnimalTupe;
         this.customPackAnimalTupe = null;
         this.isRidingAnimal = false;
@@ -48,7 +49,7 @@ public class PackAnimal extends Animal{
     }
 
     public PackAnimal(String name, Date dateOfBirth, String customPetTupe, boolean isRidingAnimal, boolean islivestock){
-        super();
+        super(name, dateOfBirth);
         this.packAnimalTupe = null;
         this.customPackAnimalTupe = customPetTupe;
         this.isRidingAnimal = isRidingAnimal;
@@ -56,7 +57,7 @@ public class PackAnimal extends Animal{
     }
 
     public PackAnimal(String name, Date dateOfBirth, String customPetTupe, boolean isRidingAnimal){
-        super();
+        super(name, dateOfBirth);
         this.packAnimalTupe = null;
         this.customPackAnimalTupe = customPetTupe;
         this.isRidingAnimal = isRidingAnimal;
@@ -64,7 +65,7 @@ public class PackAnimal extends Animal{
     }
 
     public PackAnimal(String name, Date dateOfBirth, String customPetTupe){
-        super();
+        super(name, dateOfBirth);
         this.packAnimalTupe = null;
         this.customPackAnimalTupe = customPetTupe;
         this.isRidingAnimal = false;
@@ -73,6 +74,10 @@ public class PackAnimal extends Animal{
 
     public void teachToRide(){
         this.isRidingAnimal = true;
+    }
+
+    public void collectBenefits(){
+        this.islivestock = true;
     }
 
     public boolean isRidingAnimal(){
@@ -90,6 +95,22 @@ public class PackAnimal extends Animal{
             return packAnimalTupe.toString();
         }
         
+    }
+
+    public String getBenefit(){
+        String result = "";
+        if (isRidingAnimal){
+            result += "ездовое животное";
+        } else {
+            result += "неездовое животное";
+        }
+
+        if (islivestock){
+            result += ", даёт продовольствие.";
+        } else {
+            result += ", не даёт продовольствие.";
+        }
+        return result;
     }
 
     @Override

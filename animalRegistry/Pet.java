@@ -1,3 +1,4 @@
+package animalRegistry;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,7 +27,7 @@ public class Pet extends Animal{
     private List<String> skills;
 
     public Pet(String name, Date dateOfBirth, PetTupe petTupe){
-        super();
+        super(name, dateOfBirth);
 
         this.petTupe = petTupe;
         this.customPetTupe = null;
@@ -35,7 +36,7 @@ public class Pet extends Animal{
     }
 
     public Pet(String name, Date dateOfBirth, String customPetTupe){
-        super();
+        super(name, dateOfBirth);
 
         this.petTupe = null;
         this.customPetTupe = customPetTupe;

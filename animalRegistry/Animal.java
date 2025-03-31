@@ -1,3 +1,4 @@
+package animalRegistry;
 import java.util.Date;
 
 public abstract class Animal {

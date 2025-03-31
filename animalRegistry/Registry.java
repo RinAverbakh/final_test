@@ -1,3 +1,4 @@
+package animalRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,5 +54,9 @@ public class Registry {
             System.out.println(id + ". " + animal.toString());
             id ++;
         }
+    }
+
+    public boolean isEmpty(){
+        return animals.isEmpty();
     }
 }

@@ -1,3 +1,4 @@
+package animalRegistry;
 class Counter implements AutoCloseable {
     private int count;
     private boolean isClosed = false;
