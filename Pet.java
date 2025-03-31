@@ -43,7 +43,7 @@ public class Pet extends Animal{
         this.skills = new ArrayList<>();
     }
 
-    public String getPetType(){
+    public String getType(){
         if (petTupe == null){
             return this.customPetTupe;
         } else {
