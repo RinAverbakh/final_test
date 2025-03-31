@@ -1,0 +1,408 @@
+rin@UbuntuLinuxGB:~$ cat > pets
+собака Бобик 3 года
+собака Джесси 7 лет
+кошка Маргошка 5 лет
+хомяк пушок 1 неделя
+rin@UbuntuLinuxGB:~$ cat > pack_animals
+лошадь Буран 6 лет
+осёл Евгений 3 года
+верблюд Василий 8 лет
+rin@UbuntuLinuxGB:~$ cat pets pack_animals > friends_of_people
+rin@UbuntuLinuxGB:~$ cat friends_of_people 
+собака Бобик 3 года
+собака Джесси 7 лет
+кошка Маргошка 5 лет
+хомяк пушок 1 неделя
+лошадь Буран 6 лет
+осёл Евгений 3 года
+верблюд Василий 8 лет
+rin@UbuntuLinuxGB:~$ mkdir final_test
+rin@UbuntuLinuxGB:~$ mv friends_of_people final_test
+rin@UbuntuLinuxGB:~$ sudo su
+[sudo] пароль для rin:
+root@UbuntuLinuxGB:/home/rin# wget https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb
+--2025-03-29 21:21:37--  https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb
+Распознаётся dev.mysql.com (dev.mysql.com)… 92.123.205.252, 2a02:2d8:3:9a9::2e31, 2a02:2d8:3:9a5::2e31
+Подключение к dev.mysql.com (dev.mysql.com)|92.123.205.252|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 302 Moved Temporarily
+Адрес: https://repo.mysql.com//mysql-apt-config_0.8.33-1_all.deb [переход]
+--2025-03-29 21:21:37--  https://repo.mysql.com//mysql-apt-config_0.8.33-1_all.deb
+Распознаётся repo.mysql.com (repo.mysql.com)… 23.52.19.30, 2a02:26f0:d200:888::1d68, 2a02:26f0:d200:889::1d68
+Подключение к repo.mysql.com (repo.mysql.com)|23.52.19.30|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 18072 (18K) [application/x-debian-package]
+Сохранение в: ‘mysql-apt-config_0.8.33-1_all.deb’
+
+mysql-apt-config_0.8.33-1_all 100%[=================================================>]  17,65K  --.-KB/s    за 0s      
+
+2025-03-29 21:21:37 (85,0 MB/s) - ‘mysql-apt-config_0.8.33-1_all.deb’ сохранён [18072/18072]
+
+root@UbuntuLinuxGB:/home/rin# dpkg -i mysql-apt-config_0.8.33-1_all.deb
+Выбор ранее не выбранного пакета mysql-apt-config.
+(Чтение базы данных … на данный момент установлено 200048 файлов и каталогов.)
+Подготовка к распаковке mysql-apt-config_0.8.33-1_all.deb …
+Распаковывается mysql-apt-config (0.8.33-1) …
+Настраивается пакет mysql-apt-config (0.8.33-1) …
+root@UbuntuLinuxGB:/home/rin# apt update
+Пол:1 http://repo.mysql.com/apt/ubuntu noble InRelease [22,7 kB]
+Пол:2 https://download.docker.com/linux/ubuntu noble InRelease [48,8 kB]                                               
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu noble InRelease                                                              
+Пол:4 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]                                             
+Сущ:5 http://nginx.org/packages/ubuntu noble InRelease                                                              
+Пол:6 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]                                           
+Пол:7 http://repo.mysql.com/apt/ubuntu noble/mysql-tools amd64 Packages [4 192 B]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]                                    
+Пол:9 https://download.docker.com/linux/ubuntu noble/stable amd64 Packages [22,3 kB]
+Пол:10 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [960 kB]
+Пол:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [711 kB]
+Пол:12 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [136 kB]
+Пол:13 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [9 012 B]
+Пол:14 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [7 068 B]                     
+Пол:15 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [810 kB]                    
+Пол:16 http://ru.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [213 kB]              
+Пол:17 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [164 kB]        
+Пол:18 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]             
+Пол:19 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [468 B]          
+Пол:20 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [822 kB]                  
+Пол:21 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [177 kB]                  
+Пол:22 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [51,9 kB]              
+Пол:23 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [17,0 kB]           
+Пол:24 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [17,6 kB]                
+Пол:25 http://security.ubuntu.com/ubuntu noble-security/multiverse Translation-en [3 792 B]               
+Пол:26 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]               
+Пол:27 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [380 B]           
+Пол:28 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [151 kB]                                
+Пол:29 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [13,5 kB]                           
+Пол:30 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [842 kB]                            
+Пол:31 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [170 kB]                            
+Пол:32 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]                           
+Пол:33 http://ru.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 c-n-f Metadata [492 B]                       
+Пол:34 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1 044 kB]                            
+Пол:35 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [263 kB]                              
+Пол:36 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [365 kB]                            
+Пол:37 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe Icons (48x48) [222 kB]                               
+Пол:38 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe Icons (64x64) [344 kB]                               
+Пол:39 http://ru.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [26,0 kB]                       
+Пол:40 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [21,5 kB]                           
+Пол:41 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [4 788 B]                           
+Пол:42 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]                           
+Пол:43 http://ru.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 c-n-f Metadata [592 B]                       
+Пол:44 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [39,1 kB]                               
+Пол:45 http://ru.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [8 676 B]                               
+Пол:46 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7 056 B]                             
+Пол:47 http://ru.archive.ubuntu.com/ubuntu noble-backports/main Icons (48x48) [9 518 B]                                
+Пол:48 http://ru.archive.ubuntu.com/ubuntu noble-backports/main Icons (64x64) [11,2 kB]                                
+Пол:49 http://ru.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [272 B]                           
+Пол:50 http://ru.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]                         
+Пол:51 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [26,4 kB]                           
+Пол:52 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [16,3 kB]                           
+Пол:53 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [15,8 kB]                         
+Пол:54 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe Icons (48x48) [17,4 kB]                            
+Пол:55 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe Icons (64x64) [24,3 kB]                            
+Пол:56 http://ru.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1 304 B]                     
+Пол:57 http://ru.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]                         
+Получено 8 224 kB за 39с (212 kB/s)                                                                                    
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Может быть обновлено 147 пакетов. Запустите «apt list --upgradable» для их показа.
+W: http://nginx.org/packages/ubuntu/dists/noble/InRelease: Ключ сохранён в устаревшей связке ключей trusted.gpg (/etc/apt/trusted.gpg), обратитесь к разделу DEPRECATION справочной страницы apt-key(8) для подробной информации.
+root@UbuntuLinuxGB:/home/rin# apt install mysql-server
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libllvm17t64 python3-netifaces
+Для их удаления используйте «sudo apt autoremove».
+Будут установлены следующие дополнительные пакеты:
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7t64 libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl
+  libfcgi0t64 libhtml-template-perl libmecab2 libprotobuf-lite32t64 mecab-ipadic mecab-ipadic-utf8 mecab-utils
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server-8.0 mysql-server-core-8.0
+Предлагаемые пакеты:
+  libipc-sharedcache-perl mailx tinyca
+Следующие НОВЫЕ пакеты будут установлены:
+  libcgi-fast-perl libcgi-pm-perl libevent-core-2.1-7t64 libevent-pthreads-2.1-7t64 libfcgi-bin libfcgi-perl
+  libfcgi0t64 libhtml-template-perl libmecab2 libprotobuf-lite32t64 mecab-ipadic mecab-ipadic-utf8 mecab-utils
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server mysql-server-8.0 mysql-server-core-8.0
+Обновлено 0 пакетов, установлено 19 новых пакетов, для удаления отмечено 0 пакетов, и 147 пакетов не обновлено.
+Необходимо скачать 29,3 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 242 MB.
+Хотите продолжить? [Y/n] y
+Пол:1 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mysql-common all 5.8+1.1.0build1 [6 746 B]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client-core-8.0 amd64 8.0.41-0ubuntu0.24.04.1 [2 727 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-client-8.0 amd64 8.0.41-0ubuntu0.24.04.1 [22,4 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libevent-core-2.1-7t64 amd64 2.1.12-stable-9ubuntu2 [91,3 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libevent-pthreads-2.1-7t64 amd64 2.1.12-stable-9ubuntu2 [7 982 B]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libmecab2 amd64 0.996-14ubuntu4 [201 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libprotobuf-lite32t64 amd64 3.21.12-8.2build1 [238 kB]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-server-core-8.0 amd64 8.0.41-0ubuntu0.24.04.1 [17,5 MB]
+Пол:9 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-server-8.0 amd64 8.0.41-0ubuntu0.24.04.1 [1 432 kB]
+Пол:10 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libcgi-pm-perl all 4.63-1 [185 kB]                         
+Пол:11 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libfcgi0t64 amd64 2.4.2-2.1build1 [26,8 kB]                
+Пол:12 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libfcgi-perl amd64 0.82+ds-3build2 [21,7 kB]               
+Пол:13 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libcgi-fast-perl all 1:2.17-1 [10,3 kB]                    
+Пол:14 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libfcgi-bin amd64 2.4.2-2.1build1 [11,2 kB]                
+Пол:15 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libhtml-template-perl all 2.97-2 [60,2 kB]                 
+Пол:16 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mecab-utils amd64 0.996-14ubuntu4 [4 804 B]                
+Пол:17 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mecab-ipadic all 2.7.0-20070801+main-3 [6 718 kB]          
+Пол:18 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 mecab-ipadic-utf8 all 2.7.0-20070801+main-3 [4 384 B]      
+Пол:19 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 mysql-server all 8.0.41-0ubuntu0.24.04.1 [9 520 B] 
+Получено 29,3 MB за 4мин 3с (120 kB/s)                                                                                 
+Предварительная настройка пакетов …
+Выбор ранее не выбранного пакета mysql-common.
+(Чтение базы данных … на данный момент установлено 200053 файла и каталога.)
+Подготовка к распаковке …/0-mysql-common_5.8+1.1.0build1_all.deb …
+Распаковывается mysql-common (5.8+1.1.0build1) …
+Выбор ранее не выбранного пакета mysql-client-core-8.0.
+Подготовка к распаковке …/1-mysql-client-core-8.0_8.0.41-0ubuntu0.24.04.1_amd64.deb …
+Распаковывается mysql-client-core-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Выбор ранее не выбранного пакета mysql-client-8.0.
+Подготовка к распаковке …/2-mysql-client-8.0_8.0.41-0ubuntu0.24.04.1_amd64.deb …
+Распаковывается mysql-client-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Выбор ранее не выбранного пакета libevent-core-2.1-7t64:amd64.
+Подготовка к распаковке …/3-libevent-core-2.1-7t64_2.1.12-stable-9ubuntu2_amd64.deb …
+Распаковывается libevent-core-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) …
+Выбор ранее не выбранного пакета libevent-pthreads-2.1-7t64:amd64.
+Подготовка к распаковке …/4-libevent-pthreads-2.1-7t64_2.1.12-stable-9ubuntu2_amd64.deb …
+Распаковывается libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) …
+Выбор ранее не выбранного пакета libmecab2:amd64.
+Подготовка к распаковке …/5-libmecab2_0.996-14ubuntu4_amd64.deb …
+Распаковывается libmecab2:amd64 (0.996-14ubuntu4) …
+Выбор ранее не выбранного пакета libprotobuf-lite32t64:amd64.
+Подготовка к распаковке …/6-libprotobuf-lite32t64_3.21.12-8.2build1_amd64.deb …
+Распаковывается libprotobuf-lite32t64:amd64 (3.21.12-8.2build1) …
+Выбор ранее не выбранного пакета mysql-server-core-8.0.
+Подготовка к распаковке …/7-mysql-server-core-8.0_8.0.41-0ubuntu0.24.04.1_amd64.deb …
+Распаковывается mysql-server-core-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Настраивается пакет mysql-common (5.8+1.1.0build1) …
+update-alternatives: используется /etc/mysql/my.cnf.fallback для предоставления /etc/mysql/my.cnf (my.cnf) в автоматичес
+ком режиме
+Выбор ранее не выбранного пакета mysql-server-8.0.
+(Чтение базы данных … на данный момент установлено 200278 файлов и каталогов.)
+Подготовка к распаковке …/00-mysql-server-8.0_8.0.41-0ubuntu0.24.04.1_amd64.deb …
+Распаковывается mysql-server-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Выбор ранее не выбранного пакета libcgi-pm-perl.
+Подготовка к распаковке …/01-libcgi-pm-perl_4.63-1_all.deb …
+Распаковывается libcgi-pm-perl (4.63-1) …
+Выбор ранее не выбранного пакета libfcgi0t64:amd64.
+Подготовка к распаковке …/02-libfcgi0t64_2.4.2-2.1build1_amd64.deb …
+Распаковывается libfcgi0t64:amd64 (2.4.2-2.1build1) …
+Выбор ранее не выбранного пакета libfcgi-perl.
+Подготовка к распаковке …/03-libfcgi-perl_0.82+ds-3build2_amd64.deb …
+Распаковывается libfcgi-perl (0.82+ds-3build2) …
+Выбор ранее не выбранного пакета libcgi-fast-perl.
+Подготовка к распаковке …/04-libcgi-fast-perl_1%3a2.17-1_all.deb …
+Распаковывается libcgi-fast-perl (1:2.17-1) …
+Выбор ранее не выбранного пакета libfcgi-bin.
+Подготовка к распаковке …/05-libfcgi-bin_2.4.2-2.1build1_amd64.deb …
+Распаковывается libfcgi-bin (2.4.2-2.1build1) …
+Выбор ранее не выбранного пакета libhtml-template-perl.
+Подготовка к распаковке …/06-libhtml-template-perl_2.97-2_all.deb …
+Распаковывается libhtml-template-perl (2.97-2) …
+Выбор ранее не выбранного пакета mecab-utils.
+Подготовка к распаковке …/07-mecab-utils_0.996-14ubuntu4_amd64.deb …
+Распаковывается mecab-utils (0.996-14ubuntu4) …
+Выбор ранее не выбранного пакета mecab-ipadic.
+Подготовка к распаковке …/08-mecab-ipadic_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mecab-ipadic-utf8.
+Подготовка к распаковке …/09-mecab-ipadic-utf8_2.7.0-20070801+main-3_all.deb …
+Распаковывается mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Выбор ранее не выбранного пакета mysql-server.
+Подготовка к распаковке …/10-mysql-server_8.0.41-0ubuntu0.24.04.1_all.deb …
+Распаковывается mysql-server (8.0.41-0ubuntu0.24.04.1) …
+Настраивается пакет libprotobuf-lite32t64:amd64 (3.21.12-8.2build1) …
+Настраивается пакет libmecab2:amd64 (0.996-14ubuntu4) …
+Настраивается пакет mysql-client-core-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Настраивается пакет libfcgi0t64:amd64 (2.4.2-2.1build1) …
+Настраивается пакет libcgi-pm-perl (4.63-1) …
+Настраивается пакет libfcgi-bin (2.4.2-2.1build1) …
+Настраивается пакет libhtml-template-perl (2.97-2) …
+Настраивается пакет mecab-utils (0.996-14ubuntu4) …
+Настраивается пакет mysql-client-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Настраивается пакет libfcgi-perl (0.82+ds-3build2) …
+Настраивается пакет libevent-core-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) …
+Настраивается пакет mecab-ipadic (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic для предоставления /var/lib/mecab/dic/debian (mecab-dictiona
+ry) в автоматическом режиме
+Настраивается пакет libcgi-fast-perl (1:2.17-1) …
+Настраивается пакет libevent-pthreads-2.1-7t64:amd64 (2.1.12-stable-9ubuntu2) …
+Настраивается пакет mysql-server-core-8.0 (8.0.41-0ubuntu0.24.04.1) …
+Настраивается пакет mecab-ipadic-utf8 (2.7.0-20070801+main-3) …
+Compiling IPA dictionary for Mecab.  This takes long time...
+reading /usr/share/mecab/dic/ipadic/unk.def ... 40
+emitting double-array: 100% |###########################################| 
+/usr/share/mecab/dic/ipadic/model.def is not found. skipped.
+reading /usr/share/mecab/dic/ipadic/Noun.verbal.csv ... 12146
+reading /usr/share/mecab/dic/ipadic/Noun.proper.csv ... 27328
+reading /usr/share/mecab/dic/ipadic/Noun.others.csv ... 151
+reading /usr/share/mecab/dic/ipadic/Symbol.csv ... 208
+reading /usr/share/mecab/dic/ipadic/Noun.demonst.csv ... 120
+reading /usr/share/mecab/dic/ipadic/Verb.csv ... 130750
+reading /usr/share/mecab/dic/ipadic/Postp.csv ... 146
+reading /usr/share/mecab/dic/ipadic/Prefix.csv ... 221
+reading /usr/share/mecab/dic/ipadic/Noun.nai.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Interjection.csv ... 252
+reading /usr/share/mecab/dic/ipadic/Conjunction.csv ... 171
+reading /usr/share/mecab/dic/ipadic/Others.csv ... 2
+reading /usr/share/mecab/dic/ipadic/Noun.csv ... 60477
+reading /usr/share/mecab/dic/ipadic/Noun.place.csv ... 72999
+reading /usr/share/mecab/dic/ipadic/Adverb.csv ... 3032
+reading /usr/share/mecab/dic/ipadic/Filler.csv ... 19
+reading /usr/share/mecab/dic/ipadic/Adnominal.csv ... 135
+reading /usr/share/mecab/dic/ipadic/Postp-col.csv ... 91
+reading /usr/share/mecab/dic/ipadic/Adj.csv ... 27210
+reading /usr/share/mecab/dic/ipadic/Noun.name.csv ... 34202
+reading /usr/share/mecab/dic/ipadic/Noun.adverbal.csv ... 795
+reading /usr/share/mecab/dic/ipadic/Auxil.csv ... 199
+reading /usr/share/mecab/dic/ipadic/Noun.adjv.csv ... 3328
+reading /usr/share/mecab/dic/ipadic/Noun.number.csv ... 42
+reading /usr/share/mecab/dic/ipadic/Suffix.csv ... 1393
+reading /usr/share/mecab/dic/ipadic/Noun.org.csv ... 16668
+emitting double-array: 100% |###########################################| 
+reading /usr/share/mecab/dic/ipadic/matrix.def ... 1316x1316
+emitting matrix      : 100% |###########################################| 
+
+done!
+update-alternatives: используется /var/lib/mecab/dic/ipadic-utf8 для предоставления /var/lib/mecab/dic/debian (mecab-dic
+tionary) в автоматическом режиме
+Настраивается пакет mysql-server-8.0 (8.0.41-0ubuntu0.24.04.1) …
+update-alternatives: используется /etc/mysql/mysql.cnf для предоставления /etc/mysql/my.cnf (my.cnf) в автоматическом ре
+жиме
+Renaming removed key_buffer and myisam-recover options (if present)
+mysqld will log errors to /var/log/mysql/error.log
+mysqld is running as pid 4941
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /usr/lib/systemd/system/mysql.service.
+Настраивается пакет mysql-server (8.0.41-0ubuntu0.24.04.1) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+Обрабатываются триггеры для libc-bin (2.39-0ubuntu8.4) …
+root@UbuntuLinuxGB:/home/rin# apt-get install libmysqlclient21
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libllvm17t64 python3-netifaces
+Для их удаления используйте «sudo apt autoremove».
+
+
+Следующие НОВЫЕ пакеты будут установлены:
+  libmysqlclient21
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 147 пакетов не обновлено.
+Необходимо скачать 1 254 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 6 846 kB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libmysqlclient21 amd64 8.0.41-0ubuntu0.24.04.1 [1 254 kB]
+Получено 1 254 kB за 36с (34,6 kB/s)                                                                                   
+Выбор ранее не выбранного пакета libmysqlclient21:amd64.
+(Чтение базы данных … на данный момент установлено 200446 файлов и каталогов.)
+Подготовка к распаковке …/libmysqlclient21_8.0.41-0ubuntu0.24.04.1_amd64.deb …
+Распаковывается libmysqlclient21:amd64 (8.0.41-0ubuntu0.24.04.1) …
+Настраивается пакет libmysqlclient21:amd64 (8.0.41-0ubuntu0.24.04.1) …
+Обрабатываются триггеры для libc-bin (2.39-0ubuntu8.4) …
+root@UbuntuLinuxGB:/home/rin# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+--2025-03-29 21:50:57--  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+Распознаётся dl.google.com (dl.google.com)… 108.177.14.91, 108.177.14.93, 108.177.14.136, ...
+Подключение к dl.google.com (dl.google.com)|108.177.14.91|:443... соединение установлено.
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+Длина: 114483440 (109M) [application/x-debian-package]
+Сохранение в: ‘google-chrome-stable_current_amd64.deb’
+
+google-chrome-stable_current_ 100%[=================================================>] 109,18M   379KB/s    за 5m 45s  
+
+2025-03-29 21:56:42 (324 KB/s) - ‘google-chrome-stable_current_amd64.deb’ сохранён [114483440/114483440]
+
+root@UbuntuLinuxGB:/home/rin# sudo dpkg -i google-chrome-stable_current_amd64.deb
+Выбор ранее не выбранного пакета google-chrome-stable.
+(Чтение базы данных … на данный момент установлен 200451 файл и каталог.)
+Подготовка к распаковке google-chrome-stable_current_amd64.deb …
+Распаковывается google-chrome-stable (134.0.6998.165-1) …
+Настраивается пакет google-chrome-stable (134.0.6998.165-1) …
+update-alternatives: используется /usr/bin/google-chrome-stable для предоставления /usr/bin/x-www-browser (x-www-browser) в автоматическом режиме
+update-alternatives: используется /usr/bin/google-chrome-stable для предоставления /usr/bin/gnome-www-browser (gnome-www-browser) в автоматическом режиме
+update-alternatives: используется /usr/bin/google-chrome-stable для предоставления /usr/bin/google-chrome (google-chrome) в автоматическом режиме
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+Обрабатываются триггеры для gnome-menus (3.36.0-1.1ubuntu3) …
+Обрабатываются триггеры для desktop-file-utils (0.27-2build1) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+root@UbuntuLinuxGB:/home/rin# sudo apt-get install -f
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libllvm17t64 python3-netifaces
+Для их удаления используйте «sudo apt autoremove».
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 147 пакетов не обновлено.
+root@UbuntuLinuxGB:/home/rin# dpkg -l | grep chrome
+ii  google-chrome-stable                          134.0.6998.165-1                         amd64        The web browser from Google
+root@UbuntuLinuxGB:/home/rin# sudo apt remove google-chrome-stable
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libllvm17t64 python3-netifaces
+Для их удаления используйте «sudo apt autoremove».
+Следующие пакеты будут УДАЛЕНЫ:
+  google-chrome-stable
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 1 пакетов, и 147 пакетов не обновлено.
+После данной операции объём занятого дискового пространства уменьшится на 374 MB.
+Хотите продолжить? [Y/n] n
+Прервано.
+root@UbuntuLinuxGB:/home/rin# apt purge google-chrome-stable
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Следующие пакеты устанавливались автоматически и больше не требуются:
+  libllvm17t64 python3-netifaces
+Для их удаления используйте «sudo apt autoremove».
+Следующие пакеты будут УДАЛЕНЫ:
+  google-chrome-stable*
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 1 пакетов, и 147 пакетов не обновлено.
+После данной операции объём занятого дискового пространства уменьшится на 374 MB.
+Хотите продолжить? [Y/n] y
+(Чтение базы данных … на данный момент установлено 200568 файлов и каталогов.)
+Удаляется google-chrome-stable (134.0.6998.165-1) …
+update-alternatives: используется /usr/bin/firefox для предоставления /usr/bin/x-www-browser (x-www-browser) в автоматич
+еском режиме
+update-alternatives: используется /usr/bin/firefox для предоставления /usr/bin/gnome-www-browser (gnome-www-browser) в а
+втоматическом режиме
+Обрабатываются триггеры для gnome-menus (3.36.0-1.1ubuntu3) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+Обрабатываются триггеры для desktop-file-utils (0.27-2build1) …
+(Чтение базы данных … на данный момент установлено 200452 файла и каталога.)
+Вычищаются файлы настройки пакета google-chrome-stable (134.0.6998.165-1) …
+dpkg: предупреждение: при удалении google-chrome-stable каталог «/opt» не пуст, поэтому не удалён
